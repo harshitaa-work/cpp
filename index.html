@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Rose Day 🌹</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100vh;
+      background: linear-gradient(to bottom, #fff1f5, #ffe4ec);
+      font-family: 'Georgia', serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .message {
+      z-index: 2;
+      padding: 20px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    .message h1 {
+      font-size: 2.5rem;
+      color: #b3003c;
+      margin-bottom: 10px;
+    }
+
+    .message p {
+      font-size: 1.3rem;
+      color: #6b0024;
+      line-height: 1.6;
+    }
+
+    .rose {
+      position: absolute;
+      top: -50px;
+      font-size: 24px;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.3;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="message">
+    <h1>Happy Rose Day Krishna 🌹</h1>
+    <p>
+      I am forever grateful<br>
+      to have someone to share roses with.
+    </p>
+  </div>
+
+  <script>
+    const roseCount = 40;
+
+    for (let i = 0; i < roseCount; i++) {
+      const rose = document.createElement("div");
+      rose.classList.add("rose");
+      rose.innerText = "🌹";
+
+      rose.style.left = Math.random() * 100 + "vw";
+      rose.style.animationDuration = (3 + Math.random() * 5) + "s";
+      rose.style.fontSize = (18 + Math.random() * 20) + "px";
+      rose.style.animationDelay = Math.random() * 5 + "s";
+
+      document.body.appendChild(rose);
+    }
+  </script>
+
+</body>
+</html>
